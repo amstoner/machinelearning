@@ -105,7 +105,8 @@ confusion matrix.
     cm <- confusionMatrix(eval$classe,pred_eval)
 
 The confusion matrix shows us that the accuracy is 93.7%, which is
-definitely acceptable, so we will use this model for the test data.
+definitely acceptable, so we will use this model for the test data. The
+out of sample error of the model is 6.3%, which is very small.
 
 ### Results
 
@@ -116,7 +117,7 @@ data. Plot 2 shows us the resulting partition of the classes.
     print(pred_test)
 
     ##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 
-    ##  B  A  B  A  A  E  D  B  A  A  A  C  B  A  E  E  A  B  B  B 
+    ##  B  A  B  A  A  E  D  A  A  A  A  C  B  A  E  E  A  B  B  B 
     ## Levels: A B C D E
 
     barplot(table(pred_test))
@@ -131,9 +132,9 @@ category having the highest counts.
 
 This report went through a machine learning exercise to predict the
 category different barbell lifting methods fell into. The random forest
-model was fitted with high accuracy, which makes us confident that the
-predictions for the test period are robust. The distribution of the
-exercise categories is similar to that of the training period, which is
-also reassuring. Although a random forest was fitted here, it is
-possible that other types of models can predict the results with a
-higher accuracy.
+model was fitted with high accuracy and low out of sample error, which
+makes us confident that the predictions for the test period are robust.
+The distribution of the exercise categories is similar to that of the
+training period, which is also reassuring. Although a random forest was
+fitted here, it is possible that other types of models can predict the
+results with a higher accuracy.

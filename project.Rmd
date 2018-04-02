@@ -74,7 +74,7 @@ pred_eval <- predict(mod,evalPC)
 cm <- confusionMatrix(eval$classe,pred_eval)
 ```
 
-The confusion matrix shows us that the accuracy is `r paste(round(cm$overall[1]*100,digits=1),'%',sep='')`, which is definitely acceptable, so we will use this model for the test data.
+The confusion matrix shows us that the accuracy is `r paste(round(cm$overall[1]*100,digits=1),'%',sep='')`, which is definitely acceptable, so we will use this model for the test data. The out of sample error of the model is `r paste(round(100-cm$overall[1]*100,digits=1),'%',sep='')`, which is very small.
 
 ### Results
 
@@ -90,4 +90,4 @@ Although the count in each category is different than in the training dataset, w
 
 ### Conclusions
 
-This report went through a machine learning exercise to predict the category different barbell lifting methods fell into. The random forest model was fitted with high accuracy, which makes us confident that the predictions for the test period are robust. The distribution of the exercise categories is similar to that of the training period, which is also reassuring. Although a random forest was fitted here, it is possible that other types of models can predict the results with a higher accuracy.
+This report went through a machine learning exercise to predict the category different barbell lifting methods fell into. The random forest model was fitted with high accuracy and low out of sample error, which makes us confident that the predictions for the test period are robust. The distribution of the exercise categories is similar to that of the training period, which is also reassuring. Although a random forest was fitted here, it is possible that other types of models can predict the results with a higher accuracy.
